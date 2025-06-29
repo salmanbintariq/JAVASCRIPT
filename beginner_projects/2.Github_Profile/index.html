@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Search Github Profile</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+            <h1>Search Github Profile</h1>
+            <div class="search">
+                <input type="text" 
+                name="searchInput"
+                id="searchInput"
+                placeholder="Enter Your Github Username" required />
+
+                <button 
+                class="primaryBtn" 
+                id="search_btn"
+                >Search</button>
+            </div>
+            <div class="profile-box">
+                <div class="top-section">
+                    <div class="left">
+                        <div class="avatar">
+                            <img src="avatar.jpg" alt="avatar">
+                        </div>
+                        <div class="self">
+                            <h1>Salman Tariq</h1>
+                            <h1>@salmanbintariq</h1>
+                        </div>
+                    </div>
+                    <button 
+                    class="primaryBtn" 
+                    id="check_profile_btn"
+                    >Check Profile</button>
+                </div>
+                <div class="about">
+                    <h2>About</h2>
+                    <p>
+                        YouTuber|Instructor|Full Stack Developer
+                    </p>
+                </div>
+                <div class="status">
+                    <div class="status-item">
+                        <h2>Followers</h2>
+                        <p>78</p>
+                    </div>
+                    <div class="status-item">
+                        <h2>Following</h2>
+                        <p>55</p>
+                    </div>
+                    <div class="status-item">
+                        <h2>Repos</h2>
+                        <p>78</p>
+                    </div>
+
+                </div>
+
+            </div>
+    </div>
+
+    <script src="index.js"></script>
+</body>
+</html>

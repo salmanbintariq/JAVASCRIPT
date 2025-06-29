@@ -1,0 +1,140 @@
+@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html,body{
+    font-family: "Oswald", sans-serif;
+    font-size: 62.5%; /* 1rem = 10px */
+}    
+
+body{
+    font-size: 1.6rem;
+}
+
+.container{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    gap: 4rem;
+    max-width: 1200px; /* prevents too wide on big screens */
+    margin: 0 auto;
+}
+
+.search{
+    display: flex;
+    width: 70%;
+}
+
+#searchInput{
+    width: 100%;
+    padding: 0.5rem 1rem;
+}
+
+#searchInput:focus-visible{
+    outline: 1px solid purple;
+}
+
+.primaryBtn{
+    padding: 0.5rem 1.5rem;
+    background-color: purple;
+    border: none;
+    color: white;
+    font-size: 1.4rem;
+    cursor: pointer;
+    transition: opacity 0.3s ease-in-out;
+}
+
+.primaryBtn:hover{
+    opacity: 0.9;
+}
+
+.primaryBtn:active{
+    background-color: rgb(216, 11, 216);
+}
+
+/* Profile Card */
+.profile-box{
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
+    padding: 2rem 1.5rem;
+    width: 70%;
+    max-width: 900px;
+    border-radius: 0.5rem;
+    transition: transform 0.2s ease-in-out;
+}
+
+.profile-box:hover{
+    transform: scale(1.02);
+}
+
+.top-section{
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 2rem;
+}
+
+.top-section button{
+    align-self: center;
+}
+
+.left{
+    display: flex;
+    align-items: center;
+    font-size: 1.6rem;
+    gap: 1rem;
+
+}
+
+.left h1{
+    font-size: 1.6rem;
+}
+
+.avatar{
+    height: 10rem;
+    width: 10rem;
+}
+
+.avatar img{
+    height: auto;
+    width: 100%;
+    border-radius: 50%;
+    max-width: 10rem;
+}
+
+.about{
+    margin-bottom: 2rem;
+}
+
+.status{
+    display: grid;
+    grid-template-columns: repeat(auto-fit,minmax(10rem,1fr));
+
+}
+
+.status-item{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+
+
+/* Media Query */
+@media (max-width:786px){
+    .search,
+    .profile-box{
+        width: 90%;
+    }
+
+    .top-section{
+        flex-direction: column;
+        align-items: center;
+        gap: 1rem;
+    }
+}

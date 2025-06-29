@@ -1,0 +1,138 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root{
+    --font: 'Poppins', sans-serif;
+    --primary-color: rgb(134, 2, 134);
+    --secondary-color: rgb(201, 6, 201);
+
+}
+
+html{
+    line-height: 1.4;
+    font-family: var(--font);
+}
+
+.background{
+    position: relative;
+    background: url('joanna-kosinska-1_CMoFsPfso-unsplash.jpg') no-repeat center center/cover;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.background::before{
+    content: '';
+    position: absolute;
+    inset: 0; /* Shortcut for top: 0; right: 0; bottom: 0; left: 0; */
+    /* background: linear-gradient(to bottom right,rgba(0,0,0,0.2),rgba(0,0,0,0.2)); */
+    backdrop-filter: blur(8px);
+    z-index: 1;
+    
+}
+
+.box{
+    position: relative;
+    height: 16rem;
+    width: 30rem;
+    z-index: 2;
+    background: rgba(240, 240, 240, 0.7); /* Semi-transparent */
+    border: 2px solid #fcddec;
+    border-style: solid;
+    box-shadow: 0 19px 41px rgba(0,0,0,0.36);
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1.2rem;
+    padding: 2rem 4rem;
+    
+}
+
+.box h3{
+    font-size: 1.6rem;
+    color: var(--secondary-color);
+}
+
+.box h4{
+    font-size: 1.5rem;
+}
+
+.box input{
+    height: 2rem;
+    width: 100%;
+    border: none;
+    border-radius: 0.3rem;
+    font-size: 1rem;
+    transition: all 0.1s ease;
+    border: 2px solid var(--secondary-color);
+
+}
+
+form{
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    width: 100%;
+}
+
+input:focus{  
+  outline: none; /* Remove default outline */
+  border: 2px solid var(--secondary-color); /* Add custom border */
+  box-shadow: 0 0 5px var(--secondary-color); /* Optional glow effect */
+  
+}
+
+.box button{
+    width: 100%;
+    font-size: 1.3rem;
+    background-color: var(--secondary-color);
+    color: white;
+    border: none;
+    border-radius: 0.3rem;
+    padding: 0.2rem 0px ;
+    transition: all 250ms;
+    cursor: pointer;
+}
+
+button:hover {
+  transform: translateY(1px);
+  box-shadow: 0 0 10px rgba(134, 2, 134, 0.3);
+}
+
+
+#resetbtn{
+  position: absolute;
+  z-index: 2;
+  top: 10px;
+  right: 20px;
+  padding: 0.5rem 1.4rem;
+  font-size: 1rem;
+  border: none;
+  border-radius: 0.3rem;
+  background-color: var(--primary-color);
+  color: white;
+  cursor: pointer;
+}
+
+
+@media (max-width: 768px) {
+  .box {
+    width: 90%;
+    padding: 1.5rem;
+  }
+
+  .box h3, .box h4 {
+    font-size: 1.2rem;
+  }
+
+  .box button {
+    font-size: 1.1rem;
+  }
+}
