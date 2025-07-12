@@ -6,3 +6,51 @@
   box-sizing: border-box;
   /* The box-sizing CSS property controls how the total width and height of an element are calculated. */
 }
+
+body{
+  font-family: "Poppins", sans-serif;
+  padding: 20px;
+  background-color: #f8f9fa;
+  color: #222;
+}
+
+/* Header */
+header{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #ffffff;
+  padding: 15px 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+  margin-bottom: 30px;
+}
+
+header h1{
+  font-size: 1.8rem;
+}
+
+#themeToggle{
+  border: none;
+  padding: 8px 12px;
+  background-color: #333;
+  color: #fff;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 1rem;
+}
+
+/* Dark theme */
+body.dark{
+  background-color: #121212;
+  color: #f1f1f1;
+}
+
+body.dark .app-header{
+  background-color: #1f1f1f;
+}
+
+body.dark #themeToggle{
+  background-color: #f1f1f1;
+  color: #121212;
+}
