@@ -40,6 +40,42 @@ header h1{
   font-size: 1rem;
 }
 
+/* Task Form */
+.task-form{
+  display: flex;
+  gap: 10px;
+  margin-bottom: 25px;
+}
+
+.task-form input{
+  flex: 1;
+  font-size: 1rem;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+}
+
+.task-form button{
+  padding: 10px 20px;
+  border: none;
+  font-size: 1rem;
+  background-color: #007bff;
+  color: white;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.task-form button:hover {
+  background-color: #0056b3;
+}
+
+.task-list {
+  list-style-type: none;
+  padding: 0;
+}
+
+
 /* Dark theme */
 body.dark{
   background-color: #121212;
@@ -53,4 +89,15 @@ body.dark .app-header{
 body.dark #themeToggle{
   background-color: #f1f1f1;
   color: #121212;
+}
+
+body.dark .task-form input{
+  background-color: #222;
+  color: #f1f1f1;
+  border: 1px solid #555;
+}
+
+body.dark .task-form button {
+  background-color: #00aaff;
+  color: #fff;
 }
