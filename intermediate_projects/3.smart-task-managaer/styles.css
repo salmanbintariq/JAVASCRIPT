@@ -130,6 +130,11 @@ header h1{
   transform: scale(1.05);
 }
 
+.completed span{
+  text-decoration: line-through;
+  color: #aaa;
+  opacity: 0.8;
+}
 
 /* Dark theme */
 body.dark{

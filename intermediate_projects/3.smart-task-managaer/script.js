@@ -22,41 +22,76 @@ taskForm.addEventListener('submit',(e)=>{
     return
   };
 
-  const taskItem = document.createElement('li');
+  createTaskItem(task);
+  saveTasksToLocalStorage();
+  taskInput.value = "";
+});
+
+// Add task function
+function createTaskItem(taskTextStr, isCompleted = false) {
+  const taskItem = document.createElement("li");
 
   const taskText = document.createElement("span");
-  taskText.textContent = task;
+  taskText.textContent = taskTextStr;
 
   const editBtn = document.createElement("button");
-  editBtn.innerHTML = '<i class="ri-edit-box-line"></i>Edit';
-  editBtn.className = "edit-btn"
+  editBtn.innerHTML = '<i class="ri-edit-box-line"></i> Edit';
+  editBtn.className = "edit-btn";
 
   const deleteBtn = document.createElement("button");
-  deleteBtn.innerHTML = '<i class="ri-delete-bin-fill"></i>Delete';
-  deleteBtn.className = "delete-btn"
+  deleteBtn.innerHTML = '<i class="ri-delete-bin-fill"></i> Delete';
+  deleteBtn.className = "delete-btn";
 
   taskItem.appendChild(taskText);
   taskItem.appendChild(editBtn);
   taskItem.appendChild(deleteBtn);
 
-  taskList.appendChild(taskItem)
+  if (isCompleted) taskItem.classList.add("completed");
 
-  taskInput.value = "";
+  // Event Listeners
+  taskText.addEventListener("click", () => {
+    taskItem.classList.toggle("completed");
+    saveTasksToLocalStorage();
+  });
 
-  // Delete Button Logic
-  deleteBtn.addEventListener('click',()=>{
-    if(confirm("Delete this task?")){
+  deleteBtn.addEventListener("click", () => {
+    if (confirm("Delete this task?")) {
       taskItem.remove();
+      saveTasksToLocalStorage();
     }
   });
 
-  // Edit Button Logic
-  editBtn.addEventListener('click',()=>{
-    const newValue = prompt("Edit your task:",taskText.textContent);
-
-    if(newValue !== null && newValue.trim() !== ""){
+  editBtn.addEventListener("click", () => {
+    const newValue = prompt("Edit your task:", taskText.textContent);
+    if (newValue && newValue.trim() !== "") {
       taskText.textContent = newValue.trim();
+      saveTasksToLocalStorage();
     }
   });
-});
 
+  taskList.appendChild(taskItem);
+}
+
+
+// Save to localstorage
+function saveTasksToLocalStorage(){
+  const allTasks = []
+
+  taskList.querySelectorAll('li').forEach((li) => {
+    const taskText = li.querySelector('span').textContent;
+    const isCompleted = li.classList.contains('completed');
+    allTasks.push({task:taskText, completed:isCompleted});
+  });
+
+  localStorage.setItem("tasks",JSON.stringify(allTasks))
+}
+
+// Load tasks from localstorage
+function loadTasksFromLoacalStorage(){
+  const savedTasks = JSON.parse(localStorage.getItem("tasks")) || [];
+  savedTasks.forEach(taskObj => {
+    createTaskItem(taskObj.task, taskObj.completed);
+  });
+}
+
+loadTasksFromLoacalStorage();
