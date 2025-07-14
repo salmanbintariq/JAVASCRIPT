@@ -75,6 +75,61 @@ header h1{
   padding: 0;
 }
 
+.task-list li{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #fff;
+  padding: 12px 16px;
+  margin-bottom: 10px;
+  border-radius: 6px;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.task-list li span{
+  flex-grow: 1;
+}
+
+.task-list li:hover{
+  transform: scale(1.01);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  background-color: #f9f9f9;
+}
+
+/* Edit and Delete Buttons */
+.task-list .edit-btn{
+  background-color: transparent;
+  color: #28a745;
+  border: 1px solid transparent;
+  padding: 6px 10px;
+  font-weight: 500;
+  transition: background 0.2s ease, transform 0.2s;
+}
+
+.task-list .delete-btn {
+  color: #dc3545; /* Red */
+  border: 1px solid transparent;
+  background-color: transparent;
+  padding: 6px 10px;
+  font-weight: 500;
+  margin-left: 10px;
+  transition: background 0.2s ease, transform 0.2s;
+}
+
+/* Hover Effect */
+.task-list .edit-btn:hover {
+  background-color: rgba(40, 167, 69, 0.1);
+  border-radius: 5px;
+  transform: scale(1.05);
+}
+
+.task-list .delete-btn:hover {
+  background-color: rgba(220, 53, 69, 0.1);
+  border-radius: 5px;
+  transform: scale(1.05);
+}
+
 
 /* Dark theme */
 body.dark{
@@ -101,3 +156,17 @@ body.dark .task-form button {
   background-color: #00aaff;
   color: #fff;
 }
+
+body.dark .task-list li{
+  background-color: #222;
+  color: #f1f1f1;
+}
+
+body.dark .edit-btn:hover {
+  background-color: rgba(40, 167, 69, 0.15);
+}
+
+body.dark .delete-btn:hover {
+  background-color: rgba(220, 53, 69, 0.15);
+}
+ 
