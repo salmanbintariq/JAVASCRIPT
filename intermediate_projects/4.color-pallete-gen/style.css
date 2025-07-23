@@ -1,0 +1,125 @@
+@import url(https://fonts.googleapis.com/css?family=Roboto:100,200,300,regular,500,600,700,800,900,100italic,200italic,300italic,italic,500italic,600italic,700italic,800italic,900italic);
+
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  /* The box-sizing CSS property controls how the total width and height of an element are calculated. */
+}
+
+body{
+  font-family: "Roboto", sans-serif;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  padding: 20px;
+  background: #23a7db;
+  background: linear-gradient(135deg, rgba(35, 167, 219, 1) 6%, rgba(161, 237, 235, 1) 100%);
+}
+
+.container{
+  width: 100%;
+  max-width: 800px;
+  background-color: #fff;
+  border-radius: 1rem;
+  padding: 2rem;
+  box-shadow: 0px 8px 12px rgba(0,0,0,0.3);
+}
+
+h1{
+  text-align: center;
+  color: #333;
+  margin-bottom: 1.5rem;
+  position: relative;
+  padding-bottom: 0.5rem;
+}
+
+h1::before{
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  height: 3px;
+  width: 40%;
+  transform: translateX(-50%);
+  border-radius: 2px;
+  background-color: #23a7db;
+}
+
+#generateBtn{
+  padding: 0.8rem 1.5rem;
+  border-radius: 50px;
+  border: none;
+  font-size: 1rem;
+  background: #2a4dbf;
+  background: linear-gradient(45deg,rgba(15, 27, 107, 1)  6%,rgba(42, 77, 191, 1)  100%);
+  cursor: pointer;
+  color: #fff;
+  font-weight: 500;
+  margin-bottom: 2rem;
+  transition: all 0.3s ease;
+}
+
+#generateBtn:hover{
+  box-shadow: 0 4px 8px rgba(42, 77, 191, 0.3), 0 0 25px rgba(15, 27, 107, 0.3);
+  transform: translateY(-2px);
+}
+
+#generateBtn:active{
+  transform: translateY(0);
+}
+
+.palete-container{
+  /* background-color: #333; */
+  display: grid;
+  gap: 1rem;
+  grid-template-columns: repeat(auto-fit,minmax(130px,1fr));
+}
+
+.color-box{
+  border-radius: 10px;
+  box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+  overflow: hidden;
+  transition: transform 0,3s;
+}
+
+.color-box:hover{
+  transform: translateY(-5px);
+}
+
+.color{
+  height: 120px;
+  cursor: pointer;
+}
+
+.color-info{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.7rem;
+  background-color: #fff;
+  font-size: 0.9rem;
+}
+
+.hex-value{
+  font-weight: 500;
+  letter-spacing: 0.5px;
+}
+
+.color-info i{
+  cursor: pointer;
+  color: #333;
+  transition: all 0.2s ease;
+}
+
+.color-info i:hover{
+  color: #667eea;
+}
+
+/* Responsive */
+@media (max-width:768px){
+  .palete-container{
+    grid-template-columns: repeat(auto-fit,minmax(100px,1fr));
+  }
+}
