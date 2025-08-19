@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Recipe Finder</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.0/css/all.min.css" integrity="sha512-DxV+EoADOkOygM4IR9yXP8Sb2qwgidEmeqAEmDKIOfPRQZOWbXCzLC6vjbZyy0vPisbH2SyW27+ddLVCN+OMzQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+<body>
+  <div class="container">
+    <header>
+      <h1><i class="fa-solid fa-utensils"></i> Recipe Finder App</h1>
+      <p>Find delicious recipes from around the world</p>
+    </header>
+
+    <p class="link-app">Data from <a href="https://www.themealdb.com/">TheMealDB</a></p>
+
+    <div class="search-container">
+      <input type="text" id="searchInput" placeholder="Search for meals or keywords...">
+      <button id="searchBtn">Search</button>
+    </div>
+
+    <div id="errorContainer" class="hidden">
+      <p>No meals found. Try another search term!</p>
+    </div>
+    
+    <div id="resultHeading"></div>
+
+    <div id="meals" class="meals-container"></div>
+
+    <div id="mealDetails" class="hidden">
+      <button id="backBtn"><i class="fa-solid fa-arrow-left"></i> Back to Recipes</button>
+
+      <div class="meal-details-content"></div>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
